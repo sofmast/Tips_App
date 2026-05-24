@@ -620,3 +620,110 @@ small{
   }
 
 }
+
+/*FIXED OVERFLOW*/
+
+
+
+/* FIX OVERFLOW ISSUES */
+
+html,
+body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+/* Prevent long text from stretching containers */
+*{
+  word-wrap:break-word;
+}
+
+/* Fix grid cards on small phones */
+@media(max-width:700px){
+
+  .posts-grid{
+    grid-template-columns:1fr;
+  }
+
+  .post-card{
+    width:100%;
+    min-width:0;
+  }
+
+  .post-content{
+    padding:20px;
+  }
+
+  .other-articles,
+  .general-info-content{
+    padding:22px 18px;
+  }
+
+  .hero{
+    padding:80px 16px;
+  }
+
+  .hero h1{
+    font-size:2rem;
+    line-height:1.2;
+  }
+
+  .hero p{
+    font-size:0.95rem;
+  }
+
+  .hero-buttons a{
+    width:100%;
+    max-width:260px;
+  }
+
+  nav{
+    padding:14px 16px;
+  }
+
+  .nav-links{
+    width:75%;
+    max-width:280px;
+  }
+
+  .company-name{
+    font-size:1rem;
+  }
+
+  .footer-container{
+    width:100%;
+  }
+
+  .footer{
+    overflow:hidden;
+  }
+
+}
+
+/* Extra small phones */
+@media(max-width:400px){
+
+  .hero h1{
+    font-size:1.7rem;
+  }
+
+  .section-title,
+  .other-articles h1,
+  .general-info h2{
+    font-size:1.5rem;
+  }
+
+  .post-image{
+    height:200px;
+  }
+
+  .logo{
+    gap:8px;
+  }
+
+  .logo img{
+    width:42px;
+    height:42px;
+  }
+
+}
