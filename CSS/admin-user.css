@@ -542,6 +542,8 @@ td{
     padding:20px;
 
     z-index:2000;
+   max-height:450px;
+   overflow-y: auto;
 }
 
 .modal.active{
