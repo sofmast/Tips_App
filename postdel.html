@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oxytips Admin Panel</title>
+<link rel="stylesheet" href="CSS/postdel.css">
+
+<style>
+
+</style>
+</head>
+
+<body>
+
+<header>
+  Oxytips CMS Dashboard
+</header>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h3>Oxytips</h3>
+
+    <a href="#" class="active">🏠 Dashboard</a>
+    <a href="#create-post">📝 New Post</a>
+    <a href="#posts-section">📚 Posts</a>
+    <a href="#media-library">🖼 Media</a>
+    <a href="#">⚙ Settings</a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- STATS -->
+    <div class="stats">
+
+      <div class="stat-card">
+        <h4>Total Posts</h4>
+        <p id="postCount">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h4>Categories</h4>
+        <p>3</p>
+      </div>
+
+      <div class="stat-card">
+        <h4>Media Files</h4>
+        <p id="mediaCount">0</p>
+      </div>
+
+    </div>
+
+    <!-- CREATE POST -->
+    <section class="card" id="create-post">
+
+      <div class="section-title">
+        <h2>Create New Post</h2>
+      </div>
+
+      <div class="input-group">
+        <label>Post Title</label>
+        <input type="text" id="title" placeholder="Enter post title">
+      </div>
+
+      <div class="input-group">
+        <label>Article Content</label>
+        <textarea id="content" placeholder="Write your article content..."></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Category</label>
+        <select id="category">
+          <option value="">Select Category</option>
+          <option>Health</option>
+          <option>Oxygen Tips</option>
+          <option>Medical News</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Upload Image</label>
+        <input type="file" id="imageInput" accept="image/*">
+      </div>
+
+      <div class="input-group">
+        <label>Upload Video</label>
+        <input type="file" id="videoInput" accept="video/*">
+      </div>
+
+      <div class="btn-group">
+        <button class="primary-btn" onclick="savePost()">
+          Publish Post
+        </button>
+
+        <button class="secondary-btn" onclick="clearForm()">
+          Clear Form
+        </button>
+      </div>
+
+    </section>
+
+    <!-- POSTS -->
+    <section class="card" id="posts-section">
+
+      <div class="section-title">
+        <h2>Published Posts</h2>
+      </div>
+
+      <div id="postsContainer" class="posts-grid"></div>
+
+    </section>
+
+    <!-- MEDIA LIBRARY -->
+    <section class="card" id="media-library">
+
+      <div class="section-title">
+        <h2>Media Library</h2>
+      </div>
+
+      <div class="media-grid" id="mediaGrid"></div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="JS/postdel.js">
+
+</script>
+
+</body>
+</html>

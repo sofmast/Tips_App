@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Oxytips Device Tracking</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="CSS/tracker.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+      <div class="brand-logo">O</div>
+
+      <div>
+        <h1>Oxytips</h1>
+        <p>Device Tracking System</p>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <button class="nav-btn active" data-page="inventoryPage">📦 Inventory</button>
+      <button class="nav-btn" data-page="posPage">🧾 POS</button>
+      <button class="nav-btn" data-page="recordsPage">📑 Records</button>
+       <a href="purchase.html" style="text-decoration: none;"><button class="nav-btn">purchase</button></a>
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <div class="topbar">
+
+      <div class="topbar-left">
+
+        <button class="mobile-toggle" id="toggleSidebar">☰</button>
+
+        <h2>Medical Device Monitoring</h2>
+
+        <p>
+          Professional oxygen cylinder and medical equipment tracking.
+        </p>
+
+      </div>
+
+      <div class="search-box">
+        🔎
+        <input
+          type="text"
+          id="globalSearch"
+          placeholder="Search by device, ID, staff, ward, date..."
+        >
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <small>Total Devices</small>
+        <h3 id="totalDevices">0</h3>
+      </div>
+
+      <div class="stat-card">
+        <small>Devices In Use</small>
+        <h3 id="devicesInUse">0</h3>
+      </div>
+
+      <div class="stat-card">
+        <small>Maintenance</small>
+        <h3 id="maintenanceDevices">0</h3>
+      </div>
+
+      <div class="stat-card">
+        <small>Returned Today</small>
+        <h3 id="returnedDevices">0</h3>
+      </div>
+
+    </div>
+
+    <!-- INVENTORY -->
+
+    <section class="page active" id="inventoryPage">
+
+      <div class="section-card">
+
+        <div class="section-header">
+
+          <h3>Inventory Management</h3>
+
+          <div class="action-group">
+            <button class="btn btn-primary" id="openAddDevice">
+              + Add Device
+            </button>
+          </div>
+
+        </div>
+
+        <div class="filters">
+
+          <input
+            type="text"
+            id="inventorySearch"
+            placeholder="Search inventory..."
+          >
+
+          <select id="statusFilter">
+            <option value="all">All Status</option>
+            <option value="Available">Available</option>
+            <option value="In Use">In Use</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Returned">Returned</option>
+          </select>
+
+        </div>
+
+        <div class="table-wrap">
+
+          <table class="table">
+
+            <thead>
+              <tr>
+                <th>Device ID</th>
+                <th>Device Name</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th>Ward</th>
+                <th>Assigned Staff</th>
+                <th>Last Updated</th>
+              </tr>
+            </thead>
+
+            <tbody id="inventoryTable"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- POS -->
+
+    <section class="page" id="posPage">
+
+      <div class="section-card">
+
+        <div class="section-header">
+          <h3>Device Activity POS</h3>
+        </div>
+
+        <form id="activityForm" class="form-grid">
+
+          <input type="text" id="deviceId" placeholder="Device ID" required>
+
+          <input type="text" id="deviceName" placeholder="Device Name" required>
+
+          <select id="activityType" required>
+            <option value="">Select Activity</option>
+            <option value="In Use">In Use</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Returned">Returned</option>
+          </select>
+
+          <input type="text" id="staffName" placeholder="Staff Name" required>
+
+          <input type="text" id="ward" placeholder="Ward / Department" required>
+
+          <input type="datetime-local" id="activityDate" required>
+
+          <textarea id="notes" placeholder="Activity Notes"></textarea>
+
+          <button class="btn btn-primary" type="submit">
+            Save Activity
+          </button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- RECORDS -->
+
+    <section class="page" id="recordsPage">
+
+      <div class="section-card">
+
+        <div class="section-header">
+          <h3>Record Management</h3>
+        </div>
+
+        <div class="filters">
+
+          <input
+            type="text"
+            id="recordSearch"
+            placeholder="Search records..."
+          >
+
+          <select id="recordFilter">
+            <option value="all">All Activities</option>
+            <option value="In Use">In Use</option>
+            <option value="Maintenance">Maintenance</option>
+            <option value="Returned">Returned</option>
+            <option value="Added">Added</option>
+          </select>
+
+        </div>
+
+        <!-- DESKTOP TABLE -->
+
+        <div class="table-wrap">
+
+          <table class="table">
+
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Device ID</th>
+                <th>Device</th>
+                <th>Activity</th>
+                <th>Staff</th>
+                <th>Ward</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+
+            <tbody id="recordsTable"></tbody>
+
+          </table>
+
+        </div>
+
+        <!-- MOBILE CARDS -->
+
+        <div class="records-mobile" id="recordsMobile"></div>
+
+      </div>
+
+    </section>
+
+    <div class="footer">
+      © <span id="year"></span> Oxytips Medical Device Monitoring System
+    </div>
+
+  </main>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="deviceModal">
+
+  <div class="modal-content">
+
+    <div class="modal-header">
+
+      <h3>Add Medical Device</h3>
+
+      <button class="close-btn" id="closeModal">×</button>
+
+    </div>
+
+    <form id="deviceForm" class="form-grid">
+
+      <input type="text" id="newDeviceId" placeholder="Device ID" required>
+
+      <input type="text" id="newDeviceName" placeholder="Device Name" required>
+
+      <input type="text" id="newCategory" placeholder="Category" required>
+
+      <select id="newStatus" required>
+        <option value="Available">Available</option>
+        <option value="In Use">In Use</option>
+        <option value="Maintenance">Maintenance</option>
+        <option value="Returned">Returned</option>
+      </select>
+
+      <input type="text" id="newWard" placeholder="Ward">
+
+      <input type="text" id="newStaff" placeholder="Assigned Staff">
+
+      <button class="btn btn-primary" type="submit">
+        Save Device
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script src="JS/tracker.js">
+
+
+
+</script>
+
+</body>
+</html>

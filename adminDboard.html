@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>OxyTips Admin Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="CSS/admin-dashboard.css">
+
+<style>
+
+
+
+</style>
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo-area">
+      <h1>OxyTips</h1>
+      <p>Administrative Dashboard</p>
+    </div>
+
+    <div class="sidebar-links">
+
+      <a href="index.html" class="active">
+        <i class="fa-solid fa-home"></i>
+      Home
+      </a>
+
+      <a href="add-staff.html">
+        <i class="fa-solid fa-user-plus"></i>
+        Add Staff
+      </a>
+
+      <a href="Users_admin_panel.html">
+        <i class="fa-solid fa-users-gear"></i>
+        Manager Users
+      </a>
+
+      <a href="postdel.html">
+        <i class="fa-solid fa-newspaper"></i>
+        Manage Posts
+      </a>
+
+      <a href="staff_record.html">
+        <i class="fa-solid fa-folder-open"></i>
+        Staff Records
+      </a>
+
+      <a href="trackerrec.html">
+        <i class="fa-solid fa-boxes-stacked"></i>
+        Inventory
+      </a>
+
+      <a href="settings.html">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </a>
+
+    </div>
+
+    <button class="logout-btn" id="logoutBtn">
+      Logout
+    </button>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main-content">
+
+    <div class="topbar">
+
+      <div>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <h2>
+          Welcome Back, Admin
+        </h2>
+      </div>
+
+      <div class="admin-badge">
+        Administrator Access
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <section class="stats-grid">
+
+      <div class="stat-card">
+        <i class="fa-solid fa-users"></i>
+        <h3>128</h3>
+        <p>Total Staff Members</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fa-solid fa-user-shield"></i>
+        <h3>12</h3>
+        <p>Manager Users</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fa-solid fa-newspaper"></i>
+        <h3>46</h3>
+        <p>Published Posts</p>
+      </div>
+
+      <div class="stat-card">
+        <i class="fa-solid fa-hospital"></i>
+        <h3>9</h3>
+        <p>Departments</p>
+      </div>
+
+    </section>
+
+    <!-- QUICK ACTIONS -->
+
+    <h3 class="section-title">
+      Quick Actions
+    </h3>
+
+    <section class="actions-grid">
+
+      <div class="action-card">
+
+        <div class="action-icon">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+
+        <h3>Add Staff</h3>
+
+        <p>
+          Register new healthcare staff members, manage personnel records, and maintain employee information.
+        </p>
+
+        <a href="add-staff.html" class="action-btn">
+          Open Module
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+      <div class="action-card">
+
+        <div class="action-icon">
+          <i class="fa-solid fa-users-gear"></i>
+        </div>
+
+        <h3>Manager Users</h3>
+
+        <p>
+          Control user permissions, create manager accounts, and manage administrative access securely.
+        </p>
+
+        <a href="Users_admin_panel.html" class="action-btn">
+          Open Module
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+      <div class="action-card">
+
+        <div class="action-icon">
+          <i class="fa-solid fa-newspaper"></i>
+        </div>
+
+        <h3>Manage Posts</h3>
+
+        <p>
+          Publish healthcare awareness articles, update educational resources, and manage platform content.
+        </p>
+
+        <a href="postdel.html" class="action-btn">
+          Open Module
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ACTIVITY -->
+
+    <section class="activity-section">
+
+      <h3 class="section-title">
+        Recent Activity
+      </h3>
+
+      <div class="activity-box">
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-user-plus"></i>
+          </div>
+
+          <div class="activity-text">
+            <h4>New Staff Added</h4>
+            <p>A healthcare staff member was successfully registered into the system.</p>
+          </div>
+
+        </div>
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-pen"></i>
+          </div>
+
+          <div class="activity-text">
+            <h4>Post Updated</h4>
+            <p>A medical oxygen awareness article was recently updated.</p>
+          </div>
+
+        </div>
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-shield"></i>
+          </div>
+
+          <div class="activity-text">
+            <h4>Access Granted</h4>
+            <p>Administrative privileges were assigned to a manager account.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+<script src="JS/admin-dashbod.js">
+
+
+
+</script>
+
+</body>
+</html>
+

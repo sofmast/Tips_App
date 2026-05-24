@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oxytips | User Profile</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="CSS/profile.css">
+
+<style>
+
+</style>
+</head>
+
+<body>
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-menu-top">
+        <h2 style="color:#088d82;">Oxytips</h2>
+        <i class="fa-solid fa-xmark" id="closeMenu"></i>
+    </div>
+
+    <a href="#"><i class="fa-solid fa-house"></i> Home</a>
+
+    <a href="#">
+        <i class="fa-solid fa-user"></i>
+        Profile
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-book"></i>
+        Articles
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-bell"></i>
+        Notifications
+    </a>
+
+    <a href="#">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+    </a>
+
+    <a href="#" class="logout-link">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </a>
+
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<!-- HEADER -->
+
+<header class="profile-header">
+
+    <div class="left-header">
+
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <div class="logo">
+            <img src="images/liqox.png" alt="Logo">
+        </div>
+
+        <div class="sys-name">Oxytips</div>
+
+    </div>
+
+    <div class="middle-header">
+
+        <div class="search-box">
+
+            <input type="text" placeholder="Search Oxytips">
+
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="right-header">
+
+        <div class="notification">
+
+            <i class="fa-regular fa-bell"></i>
+
+            <div class="notification-count">5</div>
+
+        </div>
+
+        <div class="user-area">
+
+            <div class="user-profile-pic">
+                <img
+                src="images/default-user.png"
+                alt="User"
+                id="headerUserImage">
+            </div>
+
+            <div
+            class="user-name"
+            id="headerUserName">
+                User
+            </div>
+            <!--==========================
+            RIGHT DROPDOWN MENU
+            =============================-->
+            <div class="dropdown">
+		                <a href="index.html">
+                    <i class="fa-solid fa-home"></i>
+                    Home
+                </a>
+
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    My Profile
+                </a>
+		                <a href="office.html">
+                 <i class="fa-solid fa-tasks"></i>
+                    Office
+                </a>
+
+                <a href="">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
+
+                <a href="adminDboard.html">
+                    <i class="fa-solid fa-user"></i>
+                    Manage Users
+                </a>
+
+                <a href="index.html" class="logout-link">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- MAIN -->
+
+<div class="main-container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="card profile-card">
+
+            <div class="cover-photo"></div>
+
+            <img
+            src="images/default-user.png"
+            alt="User"
+            class="profile-avatar"
+            id="profileAvatar">
+
+            <h2
+            class="profile-name"
+            id="profileName">
+                User Name
+            </h2>
+
+            <p
+            class="profile-role"
+            id="profileRole">
+                Profession
+            </p>
+
+            <div class="profile-stats">
+
+                <div class="stat-box">
+                    <h3>250</h3>
+                    <p>Posts</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>4.2K</h3>
+                    <p>Followers</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3>890</h3>
+                    <p>Following</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ABOUT -->
+
+        <div class="card">
+
+            <h3 style="margin-bottom:18px; color:#088d82;">
+                About
+            </h3>
+
+            <div class="bio-info">
+
+                <p>
+                    <b>Profession:</b>
+                    <span id="aboutProfession">
+                        Biomedical Engineer
+                    </span>
+                </p>
+
+                <p>
+                    <b>Email:</b>
+                    <span id="aboutEmail">
+                        user@email.com
+                    </span>
+                </p>
+
+                <p>
+                    <b>Location:</b>
+                    <span id="aboutLocation">
+                        Lusaka, Zambia
+                    </span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- PHOTOS -->
+
+        <div class="card">
+
+            <h3 style="margin-bottom:18px; color:#088d82;">
+                Photos
+            </h3>
+
+            <div class="photo-grid">
+
+                <img src="images/kamask.png" alt="Photo">
+
+                <img src="images/machinery.jpg" alt="Photo">
+
+                <img src="images/doc.jpg" alt="Photo">
+
+                <img src="images/liqox.png" alt="Photo">
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- CENTER -->
+
+    <main class="feed-section">
+
+    <!-- CREATE POST -->
+
+    <div class="post-box create-post">
+
+        <div class="post-top">
+
+            <img
+            src="images/default-user.png"
+            alt="User"
+            id="createPostUserImage">
+
+            <div class="post-user">
+
+                <h3 id="createPostUserName">
+                    User Name
+                </h3>
+
+                <p>Create a new post</p>
+
+            </div>
+
+        </div>
+
+        <textarea
+        id="postText"
+        placeholder="Share something with Oxytips community..."
+        class="post-textarea"></textarea>
+
+        <input
+        type="file"
+        id="postImageInput"
+        accept="image/*"
+        class="post-file-input">
+
+        <img
+        id="postPreview"
+        class="post-preview"
+        style="display:none;">
+
+        <button
+        id="publishPostBtn"
+        class="publish-btn">
+
+            <i class="fa-solid fa-paper-plane"></i>
+            Publish Post
+
+        </button>
+
+    </div>
+
+    <!-- POSTS RENDER HERE -->
+
+    <div id="postsContainer"></div>
+
+    </main>
+
+    <!-- RIGHT PANEL -->
+
+    <aside class="right-panel">
+
+        <div class="card">
+
+            <h3 style="margin-bottom:20px; color:#088d82;">
+                Suggested Professionals
+            </h3>
+
+            <div class="friend">
+
+                <img src="images/doc.jpg" alt="User">
+
+                <div class="friend-info">
+                    <h4>Dr. Kelvin</h4>
+                    <p>Respiratory Specialist</p>
+                </div>
+
+            </div>
+
+            <div class="friend">
+
+                <img src="images/su.jpg" alt="User">
+
+                <div class="friend-info">
+                    <h4>Mary Chola</h4>
+                    <p>Nurse Practitioner</p>
+                </div>
+
+            </div>
+
+            <div class="friend">
+
+                <img src="images/machinery.jpg" alt="User">
+
+                <div class="friend-info">
+                    <h4>Alex Banda</h4>
+                    <p>Biomedical Technician</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+</div>
+
+<script src="JS/profile.js">
+
+</script>
+
+</body>
+</html>

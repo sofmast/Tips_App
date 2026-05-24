@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Oxytips Admin Dashboard</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+rel="stylesheet">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="CSS/admin-user.css">
+
+<style>
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+
+        <img
+        src="images/liqox.png"
+        alt="logo">
+
+        <h2>Oxytips</h2>
+
+    </div>
+
+    <div class="sidebar-menu">
+
+        <a href="#" class="active">
+            <i class="fa-solid fa-chart-line"></i>
+            Dashboard
+        </a>
+
+        <a href="adminDboard.html">
+            <i class="fa-solid fa-home"></i>
+         Home
+        </a>
+
+        <a href="postdel.html">
+            <i class="fa-solid fa-file-medical"></i>
+            Posts
+        </a>
+
+        <a href="adminDboard.html">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </a>
+
+        <a href="admin-login.html" id="logoutBtn">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            Logout
+        </a>
+
+    </div>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+        <div class="left-top">
+
+            <button class="menu-btn"
+            id="menuBtn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+            <div class="page-title">
+
+                <h1>Admin Dashboard</h1>
+
+                <p>
+                    Manage Oxytips users and activities.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="admin-box">
+
+            <img
+            src="images/default-user.png"
+            id="adminImage">
+
+            <div class="admin-info">
+
+                <h4 id="adminName">
+                    Administrator
+                </h4>
+
+                <span>
+                    System Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div>
+                    <h2 id="totalUsers">0</h2>
+                    <p>Total Users</p>
+                </div>
+
+                <div class="stat-icon bg-primary">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div>
+                    <h2 id="totalPosts">0</h2>
+                    <p>Total Posts</p>
+                </div>
+
+                <div class="stat-icon bg-blue">
+                    <i class="fa-solid fa-file-medical"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div>
+                    <h2 id="activeUsers">0</h2>
+                    <p>Active Users</p>
+                </div>
+
+                <div class="stat-icon bg-orange">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+
+                <div>
+                    <h2>0</h2>
+                    <p>Blocked Users</p>
+                </div>
+
+                <div class="stat-icon bg-red">
+                    <i class="fa-solid fa-ban"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- USERS -->
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h3>Registered Users</h3>
+
+                <p class="sub-text">
+                    Search and manage users.
+                </p>
+
+            </div>
+
+            <div class="header-actions">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search users...">
+
+                </div>
+
+                <button
+                class="add-btn"
+                id="openModal">
+
+                    <i class="fa-solid fa-plus"></i>
+                    Add User
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- DESKTOP -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>User</th>
+                        <th>Email</th>
+                        <th>Profession</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="usersTableBody"></tbody>
+
+            </table>
+
+        </div>
+
+        <!-- MOBILE -->
+
+        <div
+        class="mobile-users"
+        id="mobileUsers"></div>
+
+    </div>
+
+</main>
+
+<!-- MODAL -->
+
+<div class="modal" id="userModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h3 id="modalTitle">
+                Add User
+            </h3>
+
+            <button
+            class="close-btn"
+            id="closeModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <form id="userForm">
+
+            <div class="form-group">
+
+                <label>Full Name</label>
+
+                <input
+                type="text"
+                id="fullName"
+                required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Email</label>
+
+                <input
+                type="email"
+                id="email"
+                required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Profession</label>
+
+                <input
+                type="text"
+                id="profession">
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Profile Image</label>
+
+                <label class="file-upload">
+
+                    <input
+                    type="file"
+                    id="profileImageFile"
+                    accept="image/*">
+
+                    <span>
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        Upload Profile Image
+
+                    </span>
+
+                </label>
+
+                <div
+                class="image-preview"
+                id="imagePreview">
+
+                    <div class="preview-placeholder">
+                        Image Preview
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="submit-btn">
+                Save User
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="JS/user-Admin.js">
+
+
+
+</script>
+
+</body>
+</html>

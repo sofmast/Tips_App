@@ -1,0 +1,151 @@
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --dark:#111827;
+  --gray:#6b7280;
+  --border:#d1d5db;
+  --light:#f9fafb;
+  --white:#ffffff;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:#f3f4f6;
+  font-family:'Inter', sans-serif;
+}
+
+.login-container{
+  width:100%;
+  max-width:420px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:40px 30px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+}
+
+.logo-area{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.logo-area h1{
+  font-size:2rem;
+  color:var(--dark);
+  margin-bottom:8px;
+}
+
+.logo-area p{
+  color:var(--gray);
+  font-size:0.95rem;
+}
+
+.form-group{
+  margin-bottom:22px;
+}
+
+.form-group label{
+  display:block;
+  margin-bottom:8px;
+  font-size:0.95rem;
+  font-weight:600;
+  color:var(--dark);
+}
+
+.form-group input{
+  width:100%;
+  padding:14px 15px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  font-size:1rem;
+  outline:none;
+  transition:0.2s ease;
+  background:var(--light);
+}
+
+.form-group input:focus{
+  border-color:#111827;
+  background:white;
+}
+
+.password-wrapper{
+  position:relative;
+}
+
+.toggle-password{
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  font-size:0.9rem;
+  color:var(--gray);
+  user-select:none;
+}
+
+.login-btn{
+  width:100%;
+  border:none;
+  padding:15px;
+  border-radius:12px;
+  background:#111827;
+  color:white;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.login-btn:hover{
+  opacity:0.92;
+}
+
+.message{
+  margin-top:18px;
+  text-align:center;
+  font-size:0.95rem;
+  font-weight:600;
+}
+
+.success{
+  color:#166534;
+}
+
+.error{
+  color:#b91c1c;
+}
+
+.info-box{
+  margin-top:25px;
+  padding:14px;
+  border-radius:12px;
+  background:#f9fafb;
+  border:1px dashed var(--border);
+}
+
+.info-box p{
+  font-size:0.9rem;
+  color:var(--gray);
+  line-height:1.6;
+}
+
+@media(max-width:480px){
+
+  .login-container{
+    padding:30px 22px;
+  }
+
+  .logo-area h1{
+    font-size:1.7rem;
+  }
+
+}

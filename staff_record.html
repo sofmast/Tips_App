@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Oxytips • Staff Records</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/staff-record.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+
+<div class="topbar">
+
+  <div class="brand">
+
+    <div class="logo">O</div>
+
+    <div>
+      <h2>Oxytips HMS</h2>
+      <p>Healthcare Staff Records</p>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- WRAPPER -->
+
+<div class="wrapper">
+
+<div class="card">
+
+  <!-- HEADER -->
+
+  <div class="card-top">
+
+    <h1>Staff Records</h1>
+
+    <p>
+      Professional healthcare staff management system with advanced local storage
+      retrieval, search, filtering, and secure personnel records.
+    </p>
+
+  </div>
+
+  <!-- STATS -->
+
+  <div class="stats">
+
+    <div class="stat-box">
+      <h3 id="totalStaff">0</h3>
+      <p>Total Staff</p>
+    </div>
+
+    <div class="stat-box">
+      <h3 id="doctorCount">0</h3>
+      <p>Doctors</p>
+    </div>
+
+    <div class="stat-box">
+      <h3 id="nurseCount">0</h3>
+      <p>Nurses</p>
+    </div>
+
+    <div class="stat-box">
+      <h3 id="adminCount">0</h3>
+      <p>Administrators</p>
+    </div>
+
+  </div>
+
+  <!-- CONTROLS -->
+
+  <div class="controls">
+
+    <div class="search">
+      <input 
+        type="text" 
+        id="searchInput"
+        placeholder="Search by name, profession, department, email, username..."
+      >
+    </div>
+
+    <div class="filter">
+      <select id="roleFilter">
+        <option value="">All Roles</option>
+        <option>Administrator</option>
+        <option>Supervisor</option>
+        <option>Medical Staff</option>
+      </select>
+    </div>
+
+  </div>
+
+  <!-- RECORDS -->
+
+  <div class="records">
+
+    <div class="record-grid" id="recordGrid"></div>
+
+  </div>
+
+</div>
+
+</div>
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+  <div class="modal-content">
+
+    <div class="modal-header">
+
+      <h2>Staff Details</h2>
+
+      <button class="close-btn" id="closeModal">
+        ?
+      </button>
+
+    </div>
+
+    <div class="modal-body" id="modalBody"></div>
+
+  </div>
+
+</div>
+
+<script src="JS/staffRecord.js">
+
+
+
+</script>
+
+</body>
+</html>
